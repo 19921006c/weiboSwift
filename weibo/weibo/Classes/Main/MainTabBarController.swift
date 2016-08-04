@@ -15,8 +15,44 @@ class MainTabBarController: UITabBarController {
 
         //设置当前控制器的tabbar 颜色
         //在ios7 以前，如果设置tintColor只有文字变色，图片不变
-        tabBar.tintColor = UIColor.orangeColor()
+//        tabBar.tintColor = UIColor.orangeColor()
         
+        //添加子控制器
+        addChildViewControllers()
+        
+        print(tabBar.items)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        print("--------\(tabBar.items)")
+        initComposeBtn()
+    }
+    
+    func composeBtnAction(){
+        print("composeBtnAction")
+    }
+    
+    private func initComposeBtn (){
+        //添加加号按钮
+        tabBar.addSubview(composeBtn)
+        //调整加号按钮frame
+        let width = CGFloat(UIScreen.mainScreen().bounds.size.width) / CGFloat(viewControllers!.count)
+        let height = CGFloat(49.0)
+        let rect = CGRectMake(0, 0, width, height)
+        
+        /**
+         - parameter <Trect: frame 大小
+         - parameter <Tdx:   x偏移量
+         - parameter <Tdy:   y偏移量
+         */
+        composeBtn.frame = CGRectOffset(rect, 2 * width, 0)
+    }
+    /**
+     添加所有子控制器
+     */
+    private func addChildViewControllers(){
         //获取json文件路径
         let path = NSBundle.mainBundle().pathForResource("MainVCSettings.json", ofType: nil)
         
@@ -41,7 +77,6 @@ class MainTabBarController: UITabBarController {
             }
             
         }
-        
     }
     
     /**
@@ -80,5 +115,17 @@ class MainTabBarController: UITabBarController {
         
         addChildViewController(nav)
     }
+    
+    // MARK: -懒加载
+    private lazy var composeBtn : UIButton = {
+        let btn = UIButton()
+        
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: .Normal)
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: .Highlighted)
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: .Normal)
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: .Highlighted)
+        btn.addTarget(self, action: Selector("composeBtnAction"), forControlEvents: .TouchUpInside)
+        return btn
+    }()
 
 }

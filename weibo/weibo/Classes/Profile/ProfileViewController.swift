@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if !userLogin {//没有登录
+            vistorView?.setupVistorInfo(false, imageName: "visitordiscover_image_profile", message: "登录后，你的微博、相册、个人资料回显示在这里，展示给别人")
+        }
     }
 
     override func didReceiveMemoryWarning() {
