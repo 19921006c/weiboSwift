@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class HomeViewController: BaseViewController,HomeViewControllerTitleButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SVProgressHUD.showInfoWithStatus("我来了")
         if !userLogin {//没有登录
             vistorView?.setupVistorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
             return

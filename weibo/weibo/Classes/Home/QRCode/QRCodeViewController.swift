@@ -29,6 +29,12 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
         navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func myCardBtnAction(sender: AnyObject) {
+        let controller = CardViewController()
+        
+        navigationController?.pushViewController(controller, animated: true)
+        
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //开始扫描动画
@@ -48,15 +54,17 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
         }
         //3.将输入，输出添加到会话
         session.addInput(deviceInput)
-        print(deviceOutput.metadataObjectTypes)
+//        print(deviceOutput.metadataObjectTypes)
         session.addOutput(deviceOutput)
-        print(deviceOutput.metadataObjectTypes)
+//        print(deviceOutput.metadataObjectTypes)
         //4.设置输出能够解析的数据类型
         //设置解析数据类型，要在加入会议后设置
         deviceOutput.metadataObjectTypes = deviceOutput.availableMetadataObjectTypes
         //5.设置输出对象代理，只要解析出数据，通知代理
         deviceOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
         
+        deviceOutput.rectOfInterest = CGRectMake(0.5, 0.5, 0.5, 0.5)
+        print(deviceOutput.rectOfInterest)
         //添加预览图层
         view.layer.insertSublayer(previewLayer, atIndex: 0)
         
@@ -70,12 +78,12 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
         //修改容器高度
         //停止动画
         if item.title == "二维码" {
-            print("二维码")
+//            print("二维码")
             scanViewHeight.constant = 200
         }else{
             scanViewHeight.constant = 100
             
-            print("条形码")
+//            print("条形码")
         }
         scanImageView.layer.removeAllAnimations()
         startAnimation()
@@ -106,7 +114,7 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
             let input = try AVCaptureDeviceInput(device: device)
             return input
         }catch{
-            print(error)
+//            print(error)
             return nil
         }
     }()
@@ -130,6 +138,8 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
 extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate{
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
     {
+        //清空图层
+        clearconers()
         //
         label.text = metadataObjects.last?.stringValue
 //        print(metadataObjects.last?.stringValue)
@@ -159,6 +169,7 @@ extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate{
         let layer = CAShapeLayer()
         layer.lineWidth = 4
         layer.strokeColor = UIColor.redColor().CGColor
+        layer.fillColor = UIColor.clearColor().CGColor
         //2.创建路径
 //        layer.path = UIBezierPath(rect: CGRectMake(100, 100, 200, 200)).CGPath
         let path = UIBezierPath()
@@ -174,9 +185,25 @@ extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate{
             path.addLineToPoint(point)
         }
         
+        //关闭路径
         path.closePath()
+        
+        //绘制路径
+        layer.path = path.CGPath
         
         //3.将绘制好的图层添加到drawLayer上
         drawLayer.addSublayer(layer)
+    }
+    
+    private func clearconers(){
+        //1.判断drawLayer上是否有其他图层
+        if drawLayer.sublayers == nil || drawLayer.sublayers?.count == 0 {
+            return
+        }
+        
+        for subLayer in drawLayer.sublayers!
+        {
+            subLayer.removeFromSuperlayer()
+        }
     }
 }

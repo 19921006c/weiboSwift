@@ -78,11 +78,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be1-Na-ZyS">
+                                <rect key="frame" x="130" y="89" width="60" height="30"/>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.76470588240000004" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="我的名片">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="myCardBtnAction:" destination="zhG-rX-I9K" eventType="touchUpInside" id="snH-f4-JVR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Be1-Na-ZyS" secondAttribute="trailing" constant="130" id="01o-A4-IZv"/>
+                            <constraint firstItem="Be1-Na-ZyS" firstAttribute="top" secondItem="VvO-8K-dfU" secondAttribute="bottom" constant="25" id="1t0-1i-36d"/>
+                            <constraint firstItem="y3R-6B-wn5" firstAttribute="top" secondItem="Be1-Na-ZyS" secondAttribute="bottom" constant="21" id="MLV-D3-hPs"/>
                             <constraint firstItem="y3R-6B-wn5" firstAttribute="centerX" secondItem="7Nb-l8-Gm2" secondAttribute="centerX" id="OZm-I6-3Wt"/>
                             <constraint firstItem="y3R-6B-wn5" firstAttribute="centerY" secondItem="7Nb-l8-Gm2" secondAttribute="centerY" id="QCd-eP-bDs"/>
+                            <constraint firstItem="Be1-Na-ZyS" firstAttribute="leading" secondItem="7Nb-l8-Gm2" secondAttribute="leading" constant="130" id="fhN-rS-bjs"/>
                             <constraint firstItem="3s6-Y5-Yph" firstAttribute="leading" secondItem="7Nb-l8-Gm2" secondAttribute="leading" id="sjt-ct-BM3"/>
                             <constraint firstItem="dcB-EF-LOc" firstAttribute="top" secondItem="3s6-Y5-Yph" secondAttribute="bottom" id="voa-of-P62"/>
                             <constraint firstAttribute="trailing" secondItem="3s6-Y5-Yph" secondAttribute="trailing" id="xfD-I1-xte"/>
