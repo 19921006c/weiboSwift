@@ -20,6 +20,17 @@ class HomeViewController: BaseViewController,HomeViewControllerTitleButtonDelega
         
         //初始化导航条
         initNav()
+        
+        //注册通知，监听菜单
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.change), name: kPopoverAnimatorWillDismisx, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.change), name: kPopoverAnimatorWillShow, object: nil)
+    }
+    
+    func change()
+    {
+        //修改标题按钮的状态
+        let titleBtn = navigationItem.titleView as! HomeViewControllerTitleButton
+        titleBtn.selected = !titleBtn.selected
     }
     
     private func initNav()
@@ -43,7 +54,7 @@ class HomeViewController: BaseViewController,HomeViewControllerTitleButtonDelega
         let vc = sb.instantiateInitialViewController()
         
         //设置转场代理
-        vc?.transitioningDelegate = self
+        vc?.transitioningDelegate = popoverAnimator
         
         vc?.modalPresentationStyle = UIModalPresentationStyle.Custom
         //设置转场样式
@@ -57,7 +68,9 @@ class HomeViewController: BaseViewController,HomeViewControllerTitleButtonDelega
     }
     
     func rightDown(){
-        
+        let sb = UIStoryboard(name: "QRCodeViewController", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        presentViewController(vc!, animated: true, completion: nil)
     }
 
     private func createBarButtonItem(imageName: String, target: AnyObject?, action: Selector) -> UIBarButtonItem{
@@ -69,12 +82,16 @@ class HomeViewController: BaseViewController,HomeViewControllerTitleButtonDelega
         btn.addTarget(target, action: action, forControlEvents: .TouchUpInside)
         return UIBarButtonItem(customView: btn)
     }
-}
-
-extension HomeViewController: UIViewControllerTransitioningDelegate{
-    //UIPresentationController 专用用于负责转场动画
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController?
+    
+    //MARK: -懒加载    一定要定义一个属性保存自定义转场对象，否则报错
+    private lazy var popoverAnimator: PopoverTool = {
+        let pa = PopoverTool()
+        pa.presentFrame = CGRect(x: 100, y: 56, width: 200, height: 350)
+        return pa
+    }()
+    
+    deinit
     {
-        return PopoverPresentationController(presentedViewController: presented, presentingViewController: presenting)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }

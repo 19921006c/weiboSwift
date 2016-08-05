@@ -10,6 +10,8 @@ import UIKit
 
 @available(iOS 8.0, *)
 class PopoverPresentationController: UIPresentationController {
+    
+    var presentFrame = CGRectZero
     /**
      初始化方法,返回
      
@@ -29,8 +31,12 @@ class PopoverPresentationController: UIPresentationController {
         //修改弹出试图尺寸
 //        containerView 对应transitionView
 //        presentedView 对应view
+        if presentFrame == CGRectZero {
+            presentedView()?.frame = CGRect(x: 100, y: 56, width: 200, height: 200)
+        }else{
+            presentedView()?.frame = presentFrame
+        }
         
-        presentedView()?.frame = CGRect(x: 100, y: 56, width: 200, height: 200)
         
         //在容器视图上添加蒙板
         containerView?.insertSubview(coverView, atIndex: 0)

@@ -38,7 +38,7 @@ class HomeViewControllerTitleButton: UIButton {
     }
     
     func btnAction(sender: UIButton){
-        sender.selected = !sender.selected
+//        sender.selected = !sender.selected
         delegate?.homeViewControllerTitleButtonDidSelected(sender)
     }
     

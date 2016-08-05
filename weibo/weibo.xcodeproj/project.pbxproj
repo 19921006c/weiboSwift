@@ -26,6 +26,9 @@
 		42199C181D51E59F00076D97 /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42199C171D51E59F00076D97 /* PopoverViewController.storyboard */; };
 		42199C1A1D51E8FD00076D97 /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199C191D51E8FD00076D97 /* PopoverPresentationController.swift */; };
 		42199C1C1D51EA9800076D97 /* PopoverPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42199C1B1D51EA9800076D97 /* PopoverPresentationViewController.swift */; };
+		4253CA831D52D485003A30AC /* PopoverTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4253CA821D52D485003A30AC /* PopoverTool.swift */; };
+		4253CA861D52DB4E003A30AC /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4253CA851D52DB4E003A30AC /* QRCodeViewController.storyboard */; };
+		4253CA881D52DC39003A30AC /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4253CA871D52DC39003A30AC /* QRCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		42199C171D51E59F00076D97 /* PopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
 		42199C191D51E8FD00076D97 /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		42199C1B1D51EA9800076D97 /* PopoverPresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationViewController.swift; sourceTree = "<group>"; };
+		4253CA821D52D485003A30AC /* PopoverTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverTool.swift; sourceTree = "<group>"; };
+		4253CA851D52DB4E003A30AC /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
+		4253CA871D52DC39003A30AC /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,7 @@
 		42199BF41D509B6700076D97 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4253CA841D52DB3E003A30AC /* QRCode */,
 				42199C161D51E57500076D97 /* Popover */,
 				42199BFB1D509C2800076D97 /* HomeViewController.swift */,
 				42199C141D51D71100076D97 /* HomeViewControllerTitleButton.swift */,
@@ -237,8 +244,18 @@
 				42199C171D51E59F00076D97 /* PopoverViewController.storyboard */,
 				42199C191D51E8FD00076D97 /* PopoverPresentationController.swift */,
 				42199C1B1D51EA9800076D97 /* PopoverPresentationViewController.swift */,
+				4253CA821D52D485003A30AC /* PopoverTool.swift */,
 			);
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		4253CA841D52DB3E003A30AC /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				4253CA851D52DB4E003A30AC /* QRCodeViewController.storyboard */,
+				4253CA871D52DC39003A30AC /* QRCodeViewController.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +326,7 @@
 				TargetAttributes = {
 					42199BBF1D50994C00076D97 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = RXWNSH56J4;
 					};
 					42199BD31D50994C00076D97 = {
 						CreatedOnToolsVersion = 7.3;
@@ -348,6 +366,7 @@
 				42199C181D51E59F00076D97 /* PopoverViewController.storyboard in Resources */,
 				42199C061D50A6D100076D97 /* MainVCSettings.json in Resources */,
 				42199BCB1D50994C00076D97 /* Assets.xcassets in Resources */,
+				4253CA861D52DB4E003A30AC /* QRCodeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,9 +393,11 @@
 			files = (
 				42199C1A1D51E8FD00076D97 /* PopoverPresentationController.swift in Sources */,
 				42199BC41D50994C00076D97 /* AppDelegate.swift in Sources */,
+				4253CA881D52DC39003A30AC /* QRCodeViewController.swift in Sources */,
 				42199BFA1D509C0500076D97 /* MainTabBarController.swift in Sources */,
 				42199C0B1D5193A900076D97 /* VistorView.swift in Sources */,
 				42199C1C1D51EA9800076D97 /* PopoverPresentationViewController.swift in Sources */,
+				4253CA831D52D485003A30AC /* PopoverTool.swift in Sources */,
 				42199BFC1D509C2800076D97 /* HomeViewController.swift in Sources */,
 				42199C021D509C5200076D97 /* ProfileViewController.swift in Sources */,
 				42199C151D51D71100076D97 /* HomeViewControllerTitleButton.swift in Sources */,
@@ -511,11 +532,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = joe.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -524,11 +548,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = joe.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -597,6 +624,7 @@
 				42199BEA1D50994C00076D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42199BEB1D50994C00076D97 /* Build configuration list for PBXNativeTarget "weiboTests" */ = {
 			isa = XCConfigurationList;
@@ -605,6 +633,7 @@
 				42199BED1D50994C00076D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42199BEE1D50994C00076D97 /* Build configuration list for PBXNativeTarget "weiboUITests" */ = {
 			isa = XCConfigurationList;
@@ -613,6 +642,7 @@
 				42199BF01D50994C00076D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
