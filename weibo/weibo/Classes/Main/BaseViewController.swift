@@ -11,7 +11,7 @@ import UIKit
 class BaseViewController: UIViewController,VistorViewDelegate {
     
     //定义一个变量，保存用户是否登录
-    var userLogin = true
+    var userLogin = UserAccount.userLogin()
     
     var vistorView: VistorView?
     
@@ -33,13 +33,27 @@ class BaseViewController: UIViewController,VistorViewDelegate {
         
         //设置为登录导航条
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .Plain, target: self, action: Selector(registerDidAction()))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .Plain, target: self, action: Selector(loginBtnDidAction()))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .Plain, target: self, action: Selector("leftBtnAction"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .Plain, target: self, action: Selector("rightBtnAction"))
         
     }
     
-    func loginBtnDidAction() {
+    func rightBtnAction(){
         
+        loginBtnDidAction()
+    }
+    
+    func leftBtnAction(){
+        
+        registerDidAction()
+    }
+    
+    func loginBtnDidAction() {
+        let controller = OAuthViewController()
+        let navController = UINavigationController()
+        navController.addChildViewController(controller)
+        
+        presentViewController(navController, animated: true, completion: nil)
     }
     
     func registerDidAction() {

@@ -12,8 +12,7 @@ class HomeViewController: BaseViewController,HomeViewControllerTitleButtonDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        SVProgressHUD.showInfoWithStatus("我来了")
+        
         if !userLogin {//没有登录
             vistorView?.setupVistorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
             return
@@ -23,8 +22,8 @@ class HomeViewController: BaseViewController,HomeViewControllerTitleButtonDelega
         initNav()
         
         //注册通知，监听菜单
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.change), name: kPopoverAnimatorWillDismisx, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.change), name: kPopoverAnimatorWillShow, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("change"), name: kPopoverAnimatorWillDismisx, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("change"), name: kPopoverAnimatorWillShow, object: nil)
     }
     
     func change()
@@ -37,8 +36,8 @@ class HomeViewController: BaseViewController,HomeViewControllerTitleButtonDelega
     private func initNav()
     {
         //1.初始化左右按钮
-        navigationItem.leftBarButtonItem = UIBarButtonItem.itemWithImageName("navigationbar_friendattention", target: self, action: #selector(HomeViewController.leftDown))
-        navigationItem.rightBarButtonItem = UIBarButtonItem.itemWithImageName("navigationbar_pop", target: self, action: #selector(HomeViewController.rightDown))
+        navigationItem.leftBarButtonItem = UIBarButtonItem.itemWithImageName("navigationbar_friendattention", target: self, action: Selector("leftDown"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem.itemWithImageName("navigationbar_pop", target: self, action: Selector("rightDown"))
         //初始化titleBtn
         let titleBtn = HomeViewControllerTitleButton()
         

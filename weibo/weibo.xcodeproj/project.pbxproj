@@ -30,8 +30,16 @@
 		4253CA831D52D485003A30AC /* PopoverTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4253CA821D52D485003A30AC /* PopoverTool.swift */; };
 		4253CA861D52DB4E003A30AC /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4253CA851D52DB4E003A30AC /* QRCodeViewController.storyboard */; };
 		4253CA881D52DC39003A30AC /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4253CA871D52DC39003A30AC /* QRCodeViewController.swift */; };
+		426964741D58203B00AEDDA8 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426964731D58203B00AEDDA8 /* String+Category.swift */; };
+		426964791D585A3E00AEDDA8 /* NewfeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426964781D585A3E00AEDDA8 /* NewfeatureViewController.swift */; };
+		4269647B1D586F7E00AEDDA8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269647A1D586F7E00AEDDA8 /* WelcomeViewController.swift */; };
 		428EF26E1D5428BB00A4F5A1 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF26D1D5428BB00A4F5A1 /* CardViewController.swift */; };
 		428EF2721D54371E00A4F5A1 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 428EF2711D54371E00A4F5A1 /* Bridge.m */; };
+		428EF32E1D54740100A4F5A1 /* CustomAFHTTPSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF32D1D54740100A4F5A1 /* CustomAFHTTPSessionManager.swift */; };
+		428EF3311D54757500A4F5A1 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF3301D54757500A4F5A1 /* OAuthViewController.swift */; };
+		428EF3331D5484D400A4F5A1 /* NetWorkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF3321D5484D400A4F5A1 /* NetWorkingTool.swift */; };
+		428EF3351D548BB900A4F5A1 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF3341D548BB900A4F5A1 /* UserAccount.swift */; };
+		42BD6ADC1D58803500304F96 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BD6ADB1D58803500304F96 /* Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +88,17 @@
 		4253CA821D52D485003A30AC /* PopoverTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverTool.swift; sourceTree = "<group>"; };
 		4253CA851D52DB4E003A30AC /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
 		4253CA871D52DC39003A30AC /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		426964731D58203B00AEDDA8 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
+		426964781D585A3E00AEDDA8 /* NewfeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureViewController.swift; sourceTree = "<group>"; };
+		4269647A1D586F7E00AEDDA8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		428EF26D1D5428BB00A4F5A1 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		428EF2701D54371E00A4F5A1 /* weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "weibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		428EF2711D54371E00A4F5A1 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		428EF32D1D54740100A4F5A1 /* CustomAFHTTPSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAFHTTPSessionManager.swift; sourceTree = "<group>"; };
+		428EF3301D54757500A4F5A1 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		428EF3321D5484D400A4F5A1 /* NetWorkingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkingTool.swift; sourceTree = "<group>"; };
+		428EF3341D548BB900A4F5A1 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		42BD6ADB1D58803500304F96 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		754BB9BE5FEA2DCC87800F1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A9AE180A50B5163A71E07423 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D2D72BF1D3428AE21C17A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +194,8 @@
 		42199BF11D509B6700076D97 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				426964751D5859E300AEDDA8 /* Newfeature */,
+				428EF32F1D54756400A4F5A1 /* OAuth */,
 				42199BF21D509B6700076D97 /* Common */,
 				42199BF31D509B6700076D97 /* Discover */,
 				42199BF41D509B6700076D97 /* Home */,
@@ -212,6 +230,7 @@
 				42199C161D51E57500076D97 /* Popover */,
 				42199BFB1D509C2800076D97 /* HomeViewController.swift */,
 				42199C141D51D71100076D97 /* HomeViewControllerTitleButton.swift */,
+				42BD6ADB1D58803500304F96 /* Status.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -247,6 +266,9 @@
 			isa = PBXGroup;
 			children = (
 				42199C0C1D51B9AC00076D97 /* UIView+AutoLayout.swift */,
+				428EF32D1D54740100A4F5A1 /* CustomAFHTTPSessionManager.swift */,
+				428EF3321D5484D400A4F5A1 /* NetWorkingTool.swift */,
+				426964731D58203B00AEDDA8 /* String+Category.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -279,6 +301,24 @@
 				428EF26D1D5428BB00A4F5A1 /* CardViewController.swift */,
 			);
 			path = QRCode;
+			sourceTree = "<group>";
+		};
+		426964751D5859E300AEDDA8 /* Newfeature */ = {
+			isa = PBXGroup;
+			children = (
+				426964781D585A3E00AEDDA8 /* NewfeatureViewController.swift */,
+				4269647A1D586F7E00AEDDA8 /* WelcomeViewController.swift */,
+			);
+			path = Newfeature;
+			sourceTree = "<group>";
+		};
+		428EF32F1D54756400A4F5A1 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				428EF3301D54757500A4F5A1 /* OAuthViewController.swift */,
+				428EF3341D548BB900A4F5A1 /* UserAccount.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		89A007AA43A1E9DBF73DAC61 /* Pods */ = {
@@ -478,19 +518,27 @@
 				42199BC41D50994C00076D97 /* AppDelegate.swift in Sources */,
 				4253CA881D52DC39003A30AC /* QRCodeViewController.swift in Sources */,
 				42199BFA1D509C0500076D97 /* MainTabBarController.swift in Sources */,
+				428EF3351D548BB900A4F5A1 /* UserAccount.swift in Sources */,
+				428EF3311D54757500A4F5A1 /* OAuthViewController.swift in Sources */,
+				4269647B1D586F7E00AEDDA8 /* WelcomeViewController.swift in Sources */,
 				42199C0B1D5193A900076D97 /* VistorView.swift in Sources */,
 				42199C1C1D51EA9800076D97 /* PopoverPresentationViewController.swift in Sources */,
+				42BD6ADC1D58803500304F96 /* Status.swift in Sources */,
 				4253CA831D52D485003A30AC /* PopoverTool.swift in Sources */,
 				42199BFC1D509C2800076D97 /* HomeViewController.swift in Sources */,
+				428EF32E1D54740100A4F5A1 /* CustomAFHTTPSessionManager.swift in Sources */,
 				428EF26E1D5428BB00A4F5A1 /* CardViewController.swift in Sources */,
 				42199C021D509C5200076D97 /* ProfileViewController.swift in Sources */,
 				428EF2721D54371E00A4F5A1 /* Bridge.m in Sources */,
 				42199C151D51D71100076D97 /* HomeViewControllerTitleButton.swift in Sources */,
+				426964741D58203B00AEDDA8 /* String+Category.swift in Sources */,
 				42199C0F1D51D0AC00076D97 /* UIBarButtonItem+Category.swift in Sources */,
 				42199C0D1D51B9AC00076D97 /* UIView+AutoLayout.swift in Sources */,
 				42199C001D509C4100076D97 /* MessageViewController.swift in Sources */,
 				42199C091D51918D00076D97 /* BaseViewController.swift in Sources */,
+				428EF3331D5484D400A4F5A1 /* NetWorkingTool.swift in Sources */,
 				42199BFE1D509C3500076D97 /* DiscoverViewController.swift in Sources */,
+				426964791D585A3E00AEDDA8 /* NewfeatureViewController.swift in Sources */,
 				42199C071D50A6D100076D97 /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

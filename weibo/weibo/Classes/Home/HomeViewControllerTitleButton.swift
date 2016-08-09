@@ -23,7 +23,7 @@ class HomeViewControllerTitleButton: UIButton {
         setImage(UIImage(named: "navigationbar_arrow_up"), forState: .Selected)
         setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
         sizeToFit()
-        addTarget(self, action: #selector(HomeViewControllerTitleButton.btnAction(_:)), forControlEvents: .TouchUpInside)
+        addTarget(self, action: Selector("btnAction:"), forControlEvents: .TouchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {

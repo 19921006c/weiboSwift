@@ -122,7 +122,7 @@ class VistorView: UIView {
         btn.setTitle("登录", forState: .Normal)
         btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: .Normal)
         btn.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
-        btn.addTarget(self, action: #selector(VistorView.loginBtnAction), forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: Selector("loginBtnAction"), forControlEvents: .TouchUpInside)
         return btn
     }()
     //注册按钮
@@ -131,7 +131,7 @@ class VistorView: UIView {
         btn.setTitle("注册", forState: .Normal)
         btn.setTitleColor(UIColor.orangeColor(), forState: .Normal)
         btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: .Normal)
-        btn.addTarget(self, action: #selector(VistorView.registerBtnAction), forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: Selector("registerBtnAction"), forControlEvents: .TouchUpInside)
         return btn
     }()
     
